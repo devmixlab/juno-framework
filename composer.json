@@ -12,7 +12,6 @@
         }
     ],
     "require": {
-        "psr/container": "^1.0",
-        "juno/framework": "@dev"
+        "psr/container": "^1.0"
     }
 }
