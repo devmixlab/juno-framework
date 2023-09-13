@@ -1,5 +1,5 @@
 {
-    "name": "juno-framework",
+    "name": "devmixlab/juno-framework",
     "autoload": {
         "psr-4": {
             "App\\": "app/"
