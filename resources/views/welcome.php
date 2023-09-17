@@ -2,6 +2,8 @@ Welcome{{ !empty($name) ? ' ' . $name : '' }}!
 
 <script>
 
+    // alert(11);
+
     const stores = [{_id:1,name:'mpowerpromo.com'},{_id:2,name:'amazon.com'}];
     const categories=[{name:'Aparel',_id:1,stores:[1]},{name:'Bag',_id:2,stores:[1,2]},];
     const facetGroup=[{_id:1,name:'Brand'},{_id:2,name:'Color'}];

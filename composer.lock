@@ -4,44 +4,35 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a1ab534279ffac58f17ecffaff1ae65f",
+    "content-hash": "c68c6bdf84056f8dd8dffd0039a61a71",
     "packages": [
         {
             "name": "devmixlab/juno-framework-core",
             "version": "dev-main",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/devmixlab/juno-framework-core.git",
+            "dist": {
+                "type": "path",
+                "url": "./packages/juno/framework",
                 "reference": "dff932234b5a87848ba773bd434f9c77e364ff04"
             },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/devmixlab/juno-framework-core/zipball/dff932234b5a87848ba773bd434f9c77e364ff04",
-                "reference": "dff932234b5a87848ba773bd434f9c77e364ff04",
-                "shasum": ""
-            },
-            "default-branch": true,
             "type": "library",
             "autoload": {
-                "files": [
-                    "src/helpers.php"
-                ],
                 "psr-4": {
                     "Juno\\": "src/"
-                }
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "authors": [
                 {
                     "name": "Roman Linnik devmixlab"
                 }
             ],
             "description": "framework",
-            "support": {
-                "issues": "https://github.com/devmixlab/juno-framework-core/issues",
-                "source": "https://github.com/devmixlab/juno-framework-core/tree/main"
-            },
-            "time": "2023-09-13T19:45:56+00:00"
+            "transport-options": {
+                "symlink": true,
+                "relative": true
+            }
         },
         {
             "name": "psr/container",
@@ -102,5 +93,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }

@@ -13,6 +13,15 @@
     ],
     "require": {
         "psr/container": "^1.0",
-        "devmixlab/juno-framework-core": "dev-main"
-    }
+        "devmixlab/juno-framework-core": "@dev"
+    },
+    "repositories": [
+        {
+            "url": "./packages/juno/framework",
+            "type": "path",
+            "options": {
+                "symlink": true
+            }
+        }
+    ]
 }

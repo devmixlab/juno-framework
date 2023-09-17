@@ -20,6 +20,7 @@ use Juno\Facades\Cookie;
 use Juno\Validating\Rules\Email;
 
 use Juno\Collection\Collection;
+use App\Controllers\CollectionTestController;
 
 
 Router::get('/test', function(Request $request){
@@ -27,6 +28,19 @@ Router::get('/test', function(Request $request){
 //  dump(FlashSession::get('ddd'));
 // dd(111);
   return view('welcome');
+});
+
+Router::prefix('collection')->group(function(){
+
+  Router::get('/', [CollectionTestController::class, 'index']);
+  foreach([
+    'map','transform','reject','avg','chunk','collapse','collect',
+    'combine','concat','contains',
+    'doesntContain' => 'doesnt-contain',
+    'containsOneItem' => 'contains-one-item', 'count'
+  ] as $k => $pref)
+    Router::get('/' . $pref, [CollectionTestController::class, (is_string($k) ? $k : $pref)]);
+
 });
 
 Router::get('/data/{id?}/{slug?}', function(Request $request, $id = null, $slug = null){
