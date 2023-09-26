@@ -21,14 +21,29 @@ use Juno\Validating\Rules\Email;
 
 use Juno\Collection\Collection;
 use App\Controllers\CollectionTestController;
+use App\Controllers\ContactUsController;
 
+
+Router::get('/', function(Request $request){
+//  FlashSession::push('ddd', 444);
+//  dump(FlashSession::get('ddd'));
+//    dump(route('test'));
+//  $con = \App::config("auth.guards");
+  return view('wel');
+})->name('home');
+
+Router::prefix('/contact-us')->as('contact_us')->group(function() {
+
+  Router::get('/', [ContactUsController::class, 'index'])->name('index');
+
+});
 
 Router::get('/test', function(Request $request){
 //  FlashSession::push('ddd', 444);
 //  dump(FlashSession::get('ddd'));
 // dd(111);
   return view('welcome');
-});
+})->name('test');
 
 Router::prefix('collection')->group(function(){
 
@@ -37,7 +52,11 @@ Router::prefix('collection')->group(function(){
     'map','transform','reject','avg','chunk','collapse','collect',
     'combine','concat','contains',
     'doesntContain' => 'doesnt-contain',
-    'containsOneItem' => 'contains-one-item', 'count'
+    'containsOneItem' => 'contains-one-item','count','countBy' => 'count-by',
+    'dot','each','ensure','filter','every','except','only','first',
+    'firstWhere' => 'first-where', 'flatMap' => 'flat-map', 'flatten',
+    'forget','get','groupBy' => 'group-by', 'has', 'hasAny' => 'has-any',
+    'join','keyBy' => 'key-by','keys','last','mapInto' => 'map-into'
   ] as $k => $pref)
     Router::get('/' . $pref, [CollectionTestController::class, (is_string($k) ? $k : $pref)]);
 

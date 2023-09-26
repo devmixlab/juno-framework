@@ -1,6 +1,8 @@
 <?php
 include_once('vendor/autoload.php');
 
+libxml_use_internal_errors(true);
+
 define("ROOT_PATH", dirname(__FILE__) . DIRECTORY_SEPARATOR);
 define("APP_PATH", ROOT_PATH . 'app' . DIRECTORY_SEPARATOR);
 define("CONTROLLERS_PATH", APP_PATH . 'Controllers' . DIRECTORY_SEPARATOR);
@@ -14,7 +16,7 @@ define("CONFIG_PATH", ROOT_PATH . 'config' . DIRECTORY_SEPARATOR);
 //define("CORE_HELPERS_PATH", CORE_PATH . 'helpers' . DIRECTORY_SEPARATOR);
 define("ROUTER_PATH", ROOT_PATH . 'router' . DIRECTORY_SEPARATOR);
 define("RESOURCES_PATH", ROOT_PATH . 'resources' . DIRECTORY_SEPARATOR);
-define("VIEWS_PATH", RESOURCES_PATH . 'views' . DIRECTORY_SEPARATOR);
+define("VIEW_PATH", RESOURCES_PATH . 'views' . DIRECTORY_SEPARATOR);
 //define("BLADE_VIEWS_PATH", VIEWS_PATH . 'blade' . DIRECTORY_SEPARATOR);
 //define("BLADE_VIEWS_CACHE_PATH", VIEWS_PATH . 'blade_cache' . DIRECTORY_SEPARATOR);
 

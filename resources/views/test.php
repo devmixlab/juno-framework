@@ -1,3 +1,7 @@
-gg
-<?=$slot;?>
-<?=$slot;?>
+TESTTTT - {{$slot}}
+
+@push('scripts')
+<script>
+    console.log('test');
+</script>
+@endpush
