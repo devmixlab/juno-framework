@@ -29,7 +29,9 @@ Router::get('/', function(Request $request){
 //  dump(FlashSession::get('ddd'));
 //    dump(route('test'));
 //  $con = \App::config("auth.guards");
-  return view('wel');
+  return view('wel', [
+    "varr" => "varr"
+  ]);
 })->name('home');
 
 Router::prefix('/contact-us')->as('contact_us')->group(function() {

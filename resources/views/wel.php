@@ -15,16 +15,12 @@
 <!--    <p>dddsdsd</p>-->
 <!--</div>-->
 <x-layouts.layout_test>
-  dasd
-  <p id="my">ddd</p>
 
-    <x-test />
+    <hr>
 
-    @push('scripts')
-    <script>
-        console.log('layouts.layout_test');
-    </script>
-    @endpush
+    {{$varr}}
+
+    <x-test></x-test>
 
 </x-layouts.layout_test>
 

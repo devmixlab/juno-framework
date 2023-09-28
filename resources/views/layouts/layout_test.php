@@ -9,7 +9,7 @@
     </head>
     <body>
 
-        wwwwww
+        Text from layout
 
         {{$slot}}
 
