@@ -17,10 +17,27 @@
 <x-layouts.layout_test>
 
     <hr>
+<!--    <p>dasda</p>-->
 
     {{$varr}}
 
-    <x-test></x-test>
+    @push('scripts')
+        <script>
+            console.log('layouts.layout_test');
+        </script>
+    @endpush
+
+    @push('styles')
+    <style>
+        body{
+            background-color: aqua;
+        }
+    </style>
+    @endpush
+
+    <br>
+    @include('test', ["varr" => "222"])
+<!--    <x-test></x-test>-->
 
 </x-layouts.layout_test>
 
