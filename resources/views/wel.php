@@ -14,32 +14,80 @@
 <!--    dasdasd-->
 <!--    <p>dddsdsd</p>-->
 <!--</div>-->
-<x-layouts.layout_test>
 
-    <hr>
-<!--    <p>dasda</p>-->
+<!--<x-layouts.layout >-->
+<!--das d as da-->
+<!--    <x-layouts.layout >-->
+<!--        das d as da-->
+<!--    </x-layouts.layout   >-->
+<!--</x-layouts.layout   >-->
+<!--<div>-->
+<x-layouts.layout_test>7d
 
-    {{$varr}}
+    <x-slot:title >
+        My title
+    </x-slot >
 
-    @push('scripts')
-        <script>
-            console.log('layouts.layout_test');
-        </script>
-    @endpush
+    <x-slot:tit >
+        <h2>Hello!!</h2>
+    </x-slot >
 
-    @push('styles')
-    <style>
-        body{
-            background-color: aqua;
-        }
-    </style>
-    @endpush
+<!--        {{$tit ?? ''}}-->
 
-    <br>
-    @include('test', ["varr" => "222"])
-<!--    <x-test></x-test>-->
-
+    <!--    <x-layouts.layout >-->
+    <!---->
+    <!--    </x-layouts.layout>-->
+    <!---->
+    <!--    <hr>-->
+    <!--    <p>dasda</p>-->
+    <!---->
+    <!--    {{$varr}}-->
+    <!---->
+<!--    @push('scripts_top')-->
+<!--    <script>-->
+<!--        console.log('layouts.layout_test_top');-->
+<!--    </script>-->
+<!--    @endpush-->
+<!--        @push('scripts')-->
+<!--            <script>-->
+<!--                console.log('layouts.layout_test');-->
+<!--            </script>-->
+<!--        @endpush-->
+    <!---->
+        @push('styles')
+        <style>
+            body{
+                background-color: aqua;
+            }
+        </style>
+        @endpush
+    <!---->
+    <!--    <br>-->
+<!--        @include('test', ["varr" => "222"])-->
+<!--        <x-test></x-test>-->
+<!--    <x-test>fdf</x-test>-->
+<!--    <x-test/>-->
+    <x-test>
+<!--        <x-test></x-test>-->
+        1113
+<!--        <x-slot:title >-->
+<!--            My title 555555-->
+<!--        </x-slot >-->
+    </x-test>
+    dasd
 </x-layouts.layout_test>
+
+<!--<x-slot:title >-->
+<!--    My title 111-->
+<!--    </x-slot >-->
+
+<!--<x-test></x-test>-->
+<!--asdfasdf asd-->
+<!--as dfa-->
+
+<!--<x-layouts.layout_test>-->
+<!--    dddddddd-->
+<!--</x-layouts.layout_test>-->
 
 <!--@push('scripts')-->
 <!--    <script>-->
