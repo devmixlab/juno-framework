@@ -22,15 +22,15 @@
 <!--    </x-layouts.layout   >-->
 <!--</x-layouts.layout   >-->
 <!--<div>-->
-<x-layouts.layout_test>7d
+<x-layouts.layout_test test_attr="123" :dynamic="32">7d
 
-    <x-slot:title >
-        My title
-    </x-slot >
-
-    <x-slot:tit >
-        <h2>Hello!!</h2>
-    </x-slot >
+<!--    <x-slot:title >-->
+<!--        My title-->
+<!--    </x-slot >-->
+<!---->
+<!--    <x-slot:tit >-->
+<!--        <h2>Hello!!</h2>-->
+<!--    </x-slot >-->
 
 <!--        {{$tit ?? ''}}-->
 
@@ -67,13 +67,13 @@
 <!--        <x-test></x-test>-->
 <!--    <x-test>fdf</x-test>-->
 <!--    <x-test/>-->
-    <x-test>
+<!--    <x-test>-->
 <!--        <x-test></x-test>-->
-        1113
+<!--        1113-->
 <!--        <x-slot:title >-->
 <!--            My title 555555-->
 <!--        </x-slot >-->
-    </x-test>
+<!--    </x-test>-->
     dasd
 </x-layouts.layout_test>
 

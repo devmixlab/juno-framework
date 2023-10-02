@@ -1,3 +1,4 @@
+@props([
+    "my" => "my data"
+])
 ttttttttttt
-{{$new_one ?? ''}}
-<x-test />
