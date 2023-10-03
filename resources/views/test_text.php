@@ -1,4 +1,4 @@
 @props([
-    "my" => "my data"
+    "name"
 ])
-ttttttttttt
+Name - {{$name}}

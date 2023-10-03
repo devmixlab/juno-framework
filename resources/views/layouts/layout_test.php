@@ -1,5 +1,6 @@
 @props([
-    "dasd" => "ttt", "test_attr", "dynamic"
+    "test_attr", "dynamic",
+    "rrr" => "Hi there!!"
 ])
 <html>
     <head>
@@ -12,8 +13,17 @@
         <title>{{$title ?? ''}}</title>
     </head>
     <body>
-        <x-test_text name="ddd" :kk="ddasd" />
 
+    <?php foreach(['Jessica', "Daniel", 'Marcus'] as $name): ?>
+            <div>
+<!--                {{$name}}-->
+                <x-test_text :name="'Hi ' . $name" />
+            </div>
+    <?php endforeach; ?>
+
+<!--        {{ dd($dynamic->method()) }}-->
+
+        {{ $rrr }}
         <div>
             {{ $component->name }}
         </div>

@@ -22,7 +22,19 @@
 <!--    </x-layouts.layout   >-->
 <!--</x-layouts.layout   >-->
 <!--<div>-->
-<x-layouts.layout_test test_attr="123" :dynamic="32">7d
+<?php
+//$tttt = 3123;
+//$tttt = "ddd";
+//    $tttt = ['dasda','dasdasd', "request" => request()];
+    $tttt = request();
+//    dd(111);
+//    dd(serialize($tttt));
+//    echo '<br>';
+//    $tttt = serialize($tttt);
+//$tttt = unserialize($tttt);
+//    dd($tttt);
+?>
+<x-layouts.layout_test test_attr="dd" :dynamic="$tttt">7dq
 
 <!--    <x-slot:title >-->
 <!--        My title-->
