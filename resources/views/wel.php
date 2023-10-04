@@ -34,7 +34,8 @@
 //$tttt = unserialize($tttt);
 //    dd($tttt);
 ?>
-<x-layouts.layout_test test_attr="dd" :dynamic="$tttt">7dq
+<!--<x-layouts.layout_test test_attr="dd" :dynamic="$tttt">-->
+<x-layouts.layout_test>7dq
 
 <!--    <x-slot:title >-->
 <!--        My title-->

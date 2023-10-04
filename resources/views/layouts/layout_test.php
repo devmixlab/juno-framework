@@ -17,7 +17,9 @@
     <?php foreach(['Jessica', "Daniel", 'Marcus'] as $name): ?>
             <div>
 <!--                {{$name}}-->
+              <?php if($name != 'Marcus'): ?>
                 <x-test_text :name="'Hi ' . $name" />
+                <?php endif; ?>
             </div>
     <?php endforeach; ?>
 
