@@ -14,6 +14,8 @@
     </head>
     <body>
 
+<!--    {{ ($dynamic->method())::class }}-->
+
     <?php foreach(['Jessica', "Daniel", 'Marcus'] as $name): ?>
             <div>
 <!--                {{$name}}-->

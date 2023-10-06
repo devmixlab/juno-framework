@@ -23,22 +23,39 @@ use Juno\Collection\Collection;
 use App\Controllers\CollectionTestController;
 use App\Controllers\ContactUsController;
 
+use App\Controllers\AuthController;
+
 
 Router::get('/', function(Request $request){
 //  FlashSession::push('ddd', 444);
 //  dump(FlashSession::get('ddd'));
 //    dump(route('test'));
 //  $con = \App::config("auth.guards");
-  return view('wel', [
-    "varr" => "varr"
-  ]);
+//  return view('wel', [
+//    "varr" => "varr"
+//  ]);
+  dd(route('login'));
 })->name('home');
 
-Router::prefix('/contact-us')->as('contact_us')->group(function() {
+Router::prefix('/contact-us')->as('contact_us.')->group(function() {
 
   Router::get('/', [ContactUsController::class, 'index'])->name('index');
+  Router::post('/', [ContactUsController::class, 'store'])->name('store');
 
 });
+
+Router::group(function() {
+
+  Router::get('/login', [AuthController::class, 'login'])->name('login');
+  Router::get('/register', [AuthController::class, 'register'])->name('register');
+
+  Router::as('store.')->group(function() {
+    Router::post('/login', [AuthController::class, 'storeLogin'])->name('login');
+    Router::post('/register', [AuthController::class, 'storeRegister'])->name('register');
+  });
+
+});
+
 
 Router::get('/test', function(Request $request){
 //  FlashSession::push('ddd', 444);
