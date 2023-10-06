@@ -10,17 +10,48 @@ use Juno\Database\DB;
 use Juno\Facades\Validator;
 use App\Models\ContactUs;
 use Auth;
+use App\Models\Usr;
 
 class AuthController {
 
+  public function logout()
+  {
+//    dd(1212);
+    \Auth::provider('usrs')->logout();
+    return redirect()->route('login');
+  }
+
   public function login()
   {
+//    $provider = \Auth::provider('usrs');
+//    $res = $provider->attempt('roli19850923@gmail.com', '123');
+
+//    dd($res);
+
+//    $user = \Auth::provider('usrs')->user();
+//    dd($user->email);
+//    dd(\App::config('app', []));
     return view('auth.login');
   }
 
-  public function storeLogin()
+  public function passLogin(Request $request)
   {
-//    return view('auth.login');
+    $res = Validator::make($request->all(), [
+      'email' => 'required|email',
+      'password' => 'required',
+    ]);
+
+    if(!$res->valid())
+      return redirect()->back($res);
+
+    $validated = $res->validated();
+    $is_auth = \Auth::provider('usrs')->attempt($validated['email'], $validated['password']);
+
+    if($is_auth){
+      return redirect()->route('dash.main');
+    }else{
+      return redirect()->back($res)->withMessage('Wrong password or login.');
+    }
   }
 
   public function register()
@@ -46,7 +77,15 @@ class AuthController {
     if(!$res->valid())
       return redirect()->back($res);
 
-//    dd(1212);
+//    $validated = collect($res->validated());
+    $data = $res->validated(true)->except('confirm_password')->all();
+//    dd($data);
+
+    $model = new Usr($data);
+    $model->password = \Hash::make($model->password);
+    $model->save();
+
+//    dd($model);
 //    $model = new ContactUs($res->validated());
 
 //    $model->save();

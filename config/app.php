@@ -11,18 +11,11 @@ use Juno\Facade\Facade;
 return [
 
   'auth' => [
-    'guards' => [
-      'users' => [
-        'name' => 'users',
-        'table' => 'users',
-        'model' => \app\models\User::class,
-//        'logout_after' => 10,
+    'providers' => [
+      'usrs' => [
+        'name' => 'usrs',
+        'model' => \App\Models\Usr::class,
       ],
-//      'admin_users' => [
-//        'name' => 'admin_users',
-//        'table' => 'admin_users',
-//        'model' => \app\models\AdminUser::class,
-//      ],
     ],
   ],
 

@@ -4,7 +4,16 @@
 
   <div class="ms-auto me-auto w-50">
     <h3 class="pb-2">Authorization:</h3>
+
+    <?php if(flash_session()->has('message')): ?>
+    <div class="alert alert-danger" role="alert">
+      {{ flash_session()->get('message') }}
+    </div>
+    <?php endif; ?>
+
     <form method="post">
+
+        @csrf
 
       <div class="form-group pt-4">
         <label for="inputEmail" class="form-label">Email</label>

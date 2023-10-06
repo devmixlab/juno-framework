@@ -24,6 +24,7 @@ use App\Controllers\CollectionTestController;
 use App\Controllers\ContactUsController;
 
 use App\Controllers\AuthController;
+use App\Controllers\DashController;
 
 
 Router::get('/', function(Request $request){
@@ -44,15 +45,24 @@ Router::prefix('/contact-us')->as('contact_us.')->group(function() {
 
 });
 
-Router::group(function() {
+Router::middleware('redirect_to_dash_if_auth')->group(function() {
+//Router::group(function() {
 
   Router::get('/login', [AuthController::class, 'login'])->name('login');
   Router::get('/register', [AuthController::class, 'register'])->name('register');
 
   Router::as('store.')->group(function() {
-    Router::post('/login', [AuthController::class, 'storeLogin'])->name('login');
+    Router::post('/login', [AuthController::class, 'passLogin'])->name('login');
     Router::post('/register', [AuthController::class, 'storeRegister'])->name('register');
   });
+
+});
+
+
+Router::middleware('redirect_if_not_dash_auth')->prefix('dash')->as('dash.')->group(function() {
+
+  Router::get('/', [DashController::class, 'main'])->name('main');
+  Router::get('/logout', [AuthController::class, 'logout'])->name('logout');
 
 });
 
