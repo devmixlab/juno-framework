@@ -62,7 +62,7 @@ Router::middleware('redirect_to_dash_if_auth')->group(function() {
 Router::middleware('redirect_if_not_dash_auth')->prefix('dash')->as('dash.')->group(function() {
 
   Router::get('/', [DashController::class, 'main'])->name('main');
-  Router::get('/logout', [AuthController::class, 'logout'])->name('logout');
+  Router::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
 });
 

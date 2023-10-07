@@ -1,5 +1,8 @@
 <x-layouts.test>
 
+<!--    @for($i = 1; $i < 10; $i++)-->
+<!--        {{$i}} <br>-->
+<!--    @endfor-->
 <!--    <x-contact_us.listt />-->
 
     <div class="ms-auto me-auto w-50">

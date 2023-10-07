@@ -41,6 +41,8 @@ class AuthController {
       'password' => 'required',
     ]);
 
+//    dd($res);
+
     if(!$res->valid())
       return redirect()->back($res);
 

@@ -14,7 +14,10 @@
 
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="{{ route('dash.logout') }}">Logout</a>
+            <form action="{{ route('dash.logout') }}" method="post">
+                <button type="submit" class="">Logout</button>
+            </form>
+<!--          <a class="nav-link" href="{{ route('dash.logout') }}">Logout</a>-->
         </li>
       </ul>
     </div>
